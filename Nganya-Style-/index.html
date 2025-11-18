@@ -3,93 +3,267 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nganya Style – Modern Matatu Ride Platform</title>
+    <title>Nganya App – Modern Matatu Ride Platform</title>
+
     <style>
-        body { margin: 0; font-family: 'Poppins', sans-serif; background: #f8f8f8; }
-        header { background: #000; color: #fff; padding: 20px; text-align: center; }
+        body { 
+            margin: 0; 
+            font-family: 'Poppins', sans-serif; 
+            background: #f4f4f4; 
+            color: #222;
+        }
+
+        /* ---------------- NAVBAR ---------------- */
+        nav {
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(6px);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav h1 {
+            color: #ffcc00;
+            margin: 0;
+            font-size: 26px;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+
+        /* ---------------- HERO ---------------- */
         .hero {
-            background: url('https://images.pexels.com/photos/4171204/pexels-photo-4171204.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover;
-            height: 70vh;
+            background: url('https://images.pexels.com/photos/13674066/pexels-photo-13674066.jpeg') center/cover;
+            height: 75vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-            flex-direction: column;
             text-align: center;
-            padding: 20px;
+            position: relative;
         }
-        .hero h1 { font-size: 48px; margin: 0; }
-        .hero p { font-size: 20px; max-width: 600px; }
-        .cta-buttons { margin-top: 20px; display: flex; gap: 15px; }
+
+        .overlay {
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(2px);
+            padding: 40px;
+            border-radius: 20px;
+            color: white;
+            max-width: 700px;
+        }
+
+        .overlay h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .overlay p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
         .btn {
-            padding: 12px 20px;
+            padding: 12px 24px;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 16px;
             font-weight: 600;
+            font-size: 16px;
+            transition: 0.3s;
         }
+
         .primary { background: #ffcc00; color: #000; }
         .secondary { background: #fff; color: #000; }
-        .section { padding: 40px; max-width: 1000px; margin: auto; }
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .card { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        footer { text-align: center; padding: 20px; background: #000; color: #fff; margin-top: 40px; }
-        a { text-decoration: none; }
+        .admin { background: #222; color: #fff; }
+
+        .btn:hover { transform: translateY(-3px); opacity: 0.9; }
+
+        /* ---------------- FEATURES ---------------- */
+        .section {
+            padding: 60px 40px;
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* ---------------- FOOTER ---------------- */
+        footer {
+            background: #111;
+            color: #ccc;
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: auto;
+            text-align: left;
+        }
+
+        footer h3 { color: white; }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        footer p { margin: 6px 0; }
+
+        .socials a {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 20px;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .socials a:hover { color: #ffcc00; }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+        }
     </style>
 </head>
+
 <body>
 
-<header>
-    <h2>Nganya Style</h2>
-</header>
+<!-- NAVIGATION BAR -->
+<nav>
+    <h1>Nganya Style</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="client.html">Passenger</a></li>
+        <li><a href="driver.html">Driver</a></li>
+        <li><a href="admin.html">Admin</a></li>
+    </ul>
+</nav>
 
+<!-- HERO SECTION -->
 <section class="hero">
-    <h1>Smart, Fast & Stylish Matatu Rides</h1>
-    <p>Nganya Style is a modern ride booking platform that connects passengers with matatu drivers across the city in real-time. Safe, fast and transparent.</p>
+    <div class="overlay">
+        <h1>Smart, Fast & Stylish Matatu Rides</h1>
+        <p>Connecting passengers, drivers, and administrators with real-time transport technology that makes urban travel smooth and transparent.</p>
 
-    <div class="cta-buttons">
-        <a href="client.html">
-            <button class="btn primary">Book a Ride</button>
-        </a>
-
-        <a href="driver.html">
-            <button class="btn secondary">Become a Rider</button>
-        </a>
-
-        <!-- NEW ADMIN BUTTON -->
-        <a href="admin.html">
-            <button class="btn secondary" style="background:#222; color:#fff;">Control as Admin</button>
-        </a>
+        <div class="cta-buttons">
+            <a href="client.html"><button class="btn primary">Book a Ride</button></a>
+            <a href="driver.html"><button class="btn secondary">Become a Rider</button></a>
+            <a href="admin.html"><button class="btn admin">Admin Control</button></a>
+        </div>
     </div>
-
 </section>
 
+<!-- FEATURES SECTION -->
 <section class="section">
     <h2>Why Choose Nganya Style?</h2>
+
     <div class="features">
+
         <div class="card">
+            <div style="font-size:45px;">📍</div>
             <h3>Real-Time Tracking</h3>
-            <p>Passengers can see all active Nganyas on the road through live map updates.</p>
+            <p>See all active Nganyas on the road with a live map showing movement instantly.</p>
         </div>
+
         <div class="card">
+            <div style="font-size:45px;">💳</div>
             <h3>Transparent Pricing</h3>
-            <p>No surprises — fares are shown upfront before you book.</p>
+            <p>Passengers receive upfront fare estimates so there are no surprises.</p>
         </div>
+
         <div class="card">
+            <div style="font-size:45px;">🚐</div>
             <h3>Driver Dashboard</h3>
-            <p>Drivers get earnings, passenger count, trips and more in a live dashboard.</p>
+            <p>Drivers manage trips, earnings, passenger flow & routes in real-time.</p>
         </div>
+
         <div class="card">
+            <div style="font-size:45px;">🛡️</div>
             <h3>Admin Oversight</h3>
-            <p>All drivers must apply and be approved before joining the platform.</p>
+            <p>Admins verify drivers, monitor all trips, handle disputes & ensure safety.</p>
         </div>
+
     </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-    <p>© 2025 Nganya Style</p>
+    <div class="footer-grid">
+        <div>
+            <h3>Nganya Style</h3>
+            <p>Smart transport for modern Kenya.</p>
+        </div>
+
+        <div>
+            <h3>Navigation</h3>
+            <a href="index.html">Home</a>
+            <a href="client.html">Passenger</a>
+            <a href="driver.html">Driver</a>
+            <a href="admin.html">Admin</a>
+        </div>
+
+    
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 Nganya Project – All Rights Reserved
+    </div>
 </footer>
 
 </body>
